@@ -1,2 +1,2 @@
-# open-agents
-Open agents for dynamic software automations
+# xpert
+xpert is both a CLI tool and a package for AI interactions
