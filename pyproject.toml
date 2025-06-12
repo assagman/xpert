@@ -38,6 +38,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
+    "click~=8.2.1",
     "pydantic-ai==0.2.9",
 ]
 packages = ["xpert"]
