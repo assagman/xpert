@@ -9,6 +9,8 @@ from pydantic_ai.agent import Agent
 from pydantic_ai.result import StreamedRunResult
 from pydantic_ai.exceptions import ModelHTTPError
 
+from xpert.agents.simple import SimpleAgent
+
 
 class CustomStreamedRunResult(StreamedRunResult):
     def __init__(self, obj: Any):
@@ -95,15 +97,9 @@ async def cli_stream_chat(agent_model: str, agent_model_settings: Dict):
         "Enter your text. Type '!' on a new line by itself to finish, or 'q!' to quit."
     )
 
-    agent = Agent(
-        name="simple_agent_1",
+    agent = SimpleAgent(
         model=agent_model,
-        system_prompt="",
-        output_type=str,
-        mcp_servers=[],
-        tools=[],
         model_settings=agent_model_settings,
-        retries=2,
     )
 
     message_history = None
