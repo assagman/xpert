@@ -4,7 +4,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 
 DEFAULT_CONFIG_DIR = Path("~/.xpert").expanduser().resolve()
