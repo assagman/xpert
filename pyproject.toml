@@ -51,6 +51,6 @@ xp = "xpert.cli_app:main_sync"
 
 [project.optional-dependencies]
 dev = [
-    "build>=1.2.2",
-    "twine>=5.1.1",
+    "build~=1.2.2",
+    "twine~=6.1.0",
 ]
