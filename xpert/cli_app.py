@@ -15,12 +15,22 @@ def xp():
 
 
 @xp.command()
-@click.option("--provider", default=DefaultConfig.provider,
-              help="Specify the AI model provider name to use.")
-@click.option("--model", default=DefaultConfig.model_name,
-              help="Specify the AI model name to use.")
-@click.option("--temperature", type=float, default=DefaultConfig.model_settings.get("temperature"),
-              help="Set the temperature for the AI model.")
+@click.option(
+    "--provider",
+    default=DefaultConfig.provider,
+    help="Specify the AI model provider name to use.",
+)
+@click.option(
+    "--model",
+    default=DefaultConfig.model_name,
+    help="Specify the AI model name to use.",
+)
+@click.option(
+    "--temperature",
+    type=float,
+    default=DefaultConfig.model_settings.get("temperature"),
+    help="Set the temperature for the AI model.",
+)
 def chat(provider: str, model: str, temperature: float):
     """
     Opens a basic chat session with an AI agent.
@@ -28,14 +38,12 @@ def chat(provider: str, model: str, temperature: float):
     click.echo("🏗️ Under construction 🏗️")
     click.echo()
     click.echo(f"Using model: {model}")
-    click.echo(f"Model settings:")
+    click.echo("Model settings:")
     click.echo(f"  * temperature: {temperature}")
     click.echo()
 
     agent_model = f"{provider}:{model}"
-    agent_model_settings = {
-        "temperature": temperature
-    }
+    agent_model_settings = {"temperature": temperature}
 
     asyncio.run(cli_stream_chat(agent_model, agent_model_settings))
 
