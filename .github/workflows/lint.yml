@@ -1,0 +1,27 @@
+name: Lint
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.12'
+
+      - name: Create uv venv
+        run: uv venv
+
+      - name: Sync dependencies with dev extras
+        run: uv sync --extra dev
+
+      - name: Run Ruff checks
+        run: uv run ruff check .
+
+      - name: Run Black checks
+        run: uv run black --check .
