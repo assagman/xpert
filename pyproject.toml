@@ -14,9 +14,12 @@ exclude = [
     ".gitignore",
 ]
 
+[tool.hatch.version]
+path = "xpert/__init__.py"
+
 [project]
 name = "xpert"
-version = "0.1.0"
+dynamic = ["version"]
 authors = [
     { name = "Sercan Sagman", email = "sercan@sagmans.com" }
 ]

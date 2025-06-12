@@ -4,6 +4,9 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 
+__version__ = "0.1.0"
+
+
 DEFAULT_CONFIG_DIR = Path("~/.xpert").expanduser().resolve()
 DEFAULT_ENV_FILE = DEFAULT_CONFIG_DIR / ".env"
 
